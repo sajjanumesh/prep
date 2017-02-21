@@ -1,6 +1,7 @@
 package com.ctci.chapter1;
 
 import java.util.Arrays;
+import java.util.BitSet;
 
 /**
  * Created by zambro on 2/20/17.
@@ -8,7 +9,7 @@ import java.util.Arrays;
 public class UniqueStringValidator {
 
     public static boolean isUniqueStringUsingCharArray(String str) {
-        int[] characterBitVector = new int[257];
+        int[] characterBitVector = new int[256];
         for(char c: str.toCharArray()) {
             int asciiValue = (int) c;
             if(characterBitVector[asciiValue] != 0) {
@@ -45,9 +46,30 @@ public class UniqueStringValidator {
         return true;
     }
 
+    public static boolean isUniqueStringUsingBitSet(String str) {
+        BitSet bitVector = new BitSet(256);
+        for(int i=0;i<str.length();i++) {
+            int asciiValue = (int) str.charAt(i);
+            if(bitVector.get(asciiValue)) {
+                return false;
+            } else {
+                bitVector.set(asciiValue);
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         System.out.println(isUniqueStringUsingCharArray("hello"));
+        System.out.println(isUniqueStringUsingCharArray("helo"));
+        System.out.println();
+        System.out.println(isUniqueString("hello"));
         System.out.println(isUniqueString("helo"));
+        System.out.println();
         System.out.println(isUniqueStringUsingBitVector("worldw"));
+        System.out.println(isUniqueStringUsingBitVector("world"));
+        System.out.println();
+        System.out.println(isUniqueStringUsingBitSet("hello"));
+        System.out.println(isUniqueStringUsingBitSet("helo"));
     }
 }
