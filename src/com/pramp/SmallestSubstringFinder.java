@@ -1,4 +1,4 @@
-package com.ctci.misc.examples;
+package com.pramp;
 
 import java.util.HashMap;
 import java.util.Map;
