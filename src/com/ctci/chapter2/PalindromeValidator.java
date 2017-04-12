@@ -39,48 +39,48 @@ public class PalindromeValidator {
     public static void main(String[] args) {
 
         {
-            Node prev = new Node(1);
-            Node n = new Node(2, prev);
-            prev = new Node(3, n);
-            n = new Node(10, prev);
-            prev = new Node(3, n);
-            n = new Node(2, prev);
-            prev = new Node(1, n);
-            Node list1 = prev;
+            Node n = new Node(1);
+            n = new Node(2, n);
+            n = new Node(3, n);
+            n = new Node(10, n);
+            n = new Node(3, n);
+            n = new Node(2, n);
+            n = new Node(1, n);
+            Node list1 = n;
             list1.printAll();
             System.out.println(isPalindromeUsingStack(list1));
         }
         {
-            Node prev = new Node(1);
-            Node n = new Node(2, prev);
-            prev = new Node(3, n);
-            prev = new Node(3, prev);
-            n = new Node(2, prev);
-            prev = new Node(1, n);
-            Node list1 = prev;
+            Node n = new Node(1);
+            n = new Node(2, n);
+            n = new Node(3, n);
+            n = new Node(3, n);
+            n = new Node(2, n);
+            n = new Node(1, n);
+            Node list1 = n;
             list1.printAll();
             System.out.println(isPalindromeUsingStack(list1));
         }
         {
-            Node prev = new Node(1);
-            Node n = new Node(2, prev);
-            prev = new Node(3, n);
-            n = new Node(10, prev);
-            prev = new Node(3, n);
-            n = new Node(21, prev);
-            prev = new Node(1, n);
-            Node list1 = prev;
+            Node n = new Node(1);
+            n = new Node(2, n);
+            n = new Node(3, n);
+            n = new Node(10, n);
+            n = new Node(3, n);
+            n = new Node(21, n);
+            n = new Node(1, n);
+            Node list1 = n;
             list1.printAll();
             System.out.println(isPalindromeUsingStack(list1));
         }
         {
-            Node prev = new Node(1);
-            Node n = new Node(2, prev);
-            prev = new Node(3, n);
-            prev = new Node(3, prev);
-            n = new Node(21, prev);
-            prev = new Node(1, n);
-            Node list1 = prev;
+            Node n = new Node(1);
+            n = new Node(2, n);
+            n = new Node(3, n);
+            n = new Node(3, n);
+            n = new Node(21, n);
+            n = new Node(1, n);
+            Node list1 = n;
             list1.printAll();
             System.out.println(isPalindromeUsingStack(list1));
         }

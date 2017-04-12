@@ -74,20 +74,20 @@ public class SumLists {
     public static void main(String[] args) {
 
         {
-            Node prev = new Node(6);
-            Node n = new Node(6, prev);
-            prev = new Node(1, n);
-            n = new Node(7, prev);
-            prev = new Node(8, n);
-            n = new Node(2, prev);
-            prev = new Node(3, n);
-            Node list1 = prev;
+            Node n = new Node(6);
+            n = new Node(6, n);
+            n = new Node(1, n);
+            n = new Node(7, n);
+            n = new Node(8, n);
+            n = new Node(2, n);
+            n = new Node(3, n);
+            Node list1 = n;
             list1.printAll();
 
-            prev = new Node(7);
-            n = new Node(9, prev);
-            prev = new Node(5, n);
-            Node list2 = prev;
+            n = new Node(7);
+            n = new Node(9, n);
+            n = new Node(5, n);
+            Node list2 = n;
             list2.printAll();
 
             Node h = sumList(list1, list2);
@@ -95,16 +95,16 @@ public class SumLists {
         }
 
         {
-            Node prev = new Node(8);
-            Node n = new Node(2, prev);
-            prev = new Node(3, n);
-            Node list1 = prev;
+            Node n = new Node(8);
+            n = new Node(2, n);
+            n = new Node(3, n);
+            Node list1 = n;
             list1.printAll();
 
-            prev = new Node(7);
-            n = new Node(9, prev);
-            prev = new Node(5, n);
-            Node list2 = prev;
+            n = new Node(7);
+            n = new Node(9, n);
+            n = new Node(5, n);
+            Node list2 = n;
             list2.printAll();
 
             Node h = sumList(list1, list2);
@@ -112,20 +112,20 @@ public class SumLists {
         }
 
         {
-            Node prev = new Node(6);
-            Node n = new Node(6, prev);
-            prev = new Node(1, n);
-            n = new Node(7, prev);
-            prev = new Node(8, n);
-            n = new Node(2, prev);
-            prev = new Node(3, n);
-            Node list1 = prev;
+            Node n = new Node(6);
+            n = new Node(6, n);
+            n = new Node(1, n);
+            n = new Node(7, n);
+            n = new Node(8, n);
+            n = new Node(2, n);
+            n = new Node(3, n);
+            Node list1 = n;
             list1.printAll();
 
-            prev = new Node(7);
-            n = new Node(9, prev);
-            prev = new Node(5, n);
-            Node list2 = prev;
+            n = new Node(7);
+            n = new Node(9, n);
+            n = new Node(5, n);
+            Node list2 = n;
             list2.printAll();
 
             Node h = sumListRecursion(list1, list2, 0);
@@ -133,16 +133,16 @@ public class SumLists {
         }
 
         {
-            Node prev = new Node(8);
-            Node n = new Node(2, prev);
-            prev = new Node(3, n);
-            Node list1 = prev;
+            Node n = new Node(8);
+            n = new Node(2, n);
+            n = new Node(3, n);
+            Node list1 = n;
             list1.printAll();
 
-            prev = new Node(7);
-            n = new Node(9, prev);
-            prev = new Node(5, n);
-            Node list2 = prev;
+            n = new Node(7);
+            n = new Node(9, n);
+            n = new Node(5, n);
+            Node list2 = n;
             list2.printAll();
 
             Node h = sumListRecursion(list1, list2, 0);

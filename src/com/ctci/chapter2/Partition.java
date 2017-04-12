@@ -42,14 +42,13 @@ public class Partition {
         return h;
     }
     public static void main(String[] args) {
-        Node prev = new Node(1);
-        Node n = new Node(2, prev);
-        prev = new Node(10, n);
-        n = new Node(5, prev);
-        prev = new Node(8, n);
-        n = new Node(5, prev);
-        prev = new Node(3, n);
-        n = prev;
+        Node n = new Node(1);
+        n = new Node(2, n);
+        n = new Node(10, n);
+        n = new Node(5, n);
+        n = new Node(8, n);
+        n = new Node(5, n);
+        n = new Node(3, n);
 
         n.printAll();
         n = partition(n, 5);

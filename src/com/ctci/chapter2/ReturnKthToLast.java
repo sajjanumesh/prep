@@ -32,14 +32,13 @@ public class ReturnKthToLast {
         return pointer;
     }
     public static void main(String[] args) {
-        Node prev = new Node(3);
-        Node n = new Node(5, prev);
-        prev = new Node(1, n);
-        n = new Node(2, prev);
-        prev = new Node(3, n);
-        n = new Node(2, prev);
-        prev = new Node(1, n);
-        n = prev;
+        Node n = new Node(3);
+        n = new Node(5, n);
+        n = new Node(1, n);
+        n = new Node(2, n);
+        n = new Node(3, n);
+        n = new Node(2, n);
+        n = new Node(1, n);
 
         n.printAll();
         Node i = findKthToLast(n, 20);
