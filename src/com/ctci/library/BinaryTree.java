@@ -1,16 +1,28 @@
 package com.ctci.library;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Created by zambro on 4/16/17.
  */
 public class BinaryTree {
 
+    /**
+     *
+     *           10
+     *        /     \
+     *       3      34
+     *      / \    /
+     *     2  100 8
+     *
+     */
     public static TreeNode getBinaryTree() {
         TreeNode left = new TreeNode(2);
         TreeNode right = new TreeNode(100);
         TreeNode parentLeft = new TreeNode(3,left,right);
 
-        left = new TreeNode(100);
+        left = new TreeNode(8);
         TreeNode parentRight = new TreeNode(34, left, null);
 
         TreeNode head = new TreeNode(10, parentLeft, parentRight);
@@ -44,6 +56,20 @@ public class BinaryTree {
         printPreOrder(node.right);
     }
 
+    public static void printBFS(TreeNode head) {
+        Queue<TreeNode> queue = new LinkedList<>();
+
+        queue.add(head);
+        while(!queue.isEmpty()) {
+            TreeNode node=queue.poll();
+            System.out.print(node.data+" ");
+            if(node.left != null)
+                queue.add(node.left);
+            if(node.right != null)
+                queue.add(node.right);
+        }
+    }
+
     public static void main(String[] args) {
         TreeNode head = getBinaryTree();
         System.out.println("Inorder: ");
@@ -52,5 +78,7 @@ public class BinaryTree {
         printPostOrder(head);
         System.out.println("\nPreOrder: ");
         printPreOrder(head);
+        System.out.println("\nBFS: ");
+        printBFS(head);
     }
 }
