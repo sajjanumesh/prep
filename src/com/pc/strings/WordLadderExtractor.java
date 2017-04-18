@@ -74,6 +74,7 @@ public class WordLadderExtractor {
     }
 
 
+
     public static void main(String[] args) {
         Set<String> dict = new HashSet<>();
         dict.add("hit");
