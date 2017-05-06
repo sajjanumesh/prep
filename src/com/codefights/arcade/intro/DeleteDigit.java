@@ -1,4 +1,4 @@
-package com.codefights.arcade;
+package com.codefights.arcade.intro;
 
 /**
  * Created by zambro on 4/17/17.

@@ -1,4 +1,4 @@
-package com.codefights.arcade;
+package com.codefights.arcade.intro;
 
 import java.util.HashMap;
 import java.util.Map;

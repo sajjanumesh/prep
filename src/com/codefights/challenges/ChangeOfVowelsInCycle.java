@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by zambro on 5/4/17.
+ * Created by zambro on 5/4/17. https://codefights.com/challenge/CA2ShAfLkb5D5JHCG
  * Given a text, reverse its characters and shift all of the vowels in a cycle.
 
  The vowels are 'a', 'e', 'i', 'o', and 'u' and can be upper- and lowercase.
@@ -41,6 +41,7 @@ public class ChangeOfVowelsInCycle {
         return "AEIOUaeiou".indexOf(c) != -1;
     }
 
+    //Same logic as above but reduced char count for the challenge - 315 char count
     public static String changeOfVowelsInCycleGolfingIt(int c, String t) {
         String s = "AEIOUaeiou";
         List<Character> l = new ArrayList<>();
