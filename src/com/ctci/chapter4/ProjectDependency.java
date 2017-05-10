@@ -22,11 +22,12 @@ public class ProjectDependency {
 
     }
 
+    //Time complexity: O(p+d)
     public static char[] findBuildOrder(char[] projects, char[][] dependencies) {
         char[] build = new char[projects.length];
-        Set<Character> set = new HashSet<>();
         nodeMap = new HashMap<>();
 
+        //Build a graph where an incoming edge exists for a node if its has a dependency
         for (char[] dependency : dependencies) {
             char child = dependency[0];
             char parent = dependency[1];
@@ -47,23 +48,36 @@ public class ProjectDependency {
         }
 
 
+        //Make sure no individual nodes are left out of the graph
         for (char project : projects) {
-            set.add(project);
             if(!nodeMap.containsKey(project)) {
                 nodeMap.put(project, new Node(project));
             }
         }
 
 
-        int start = 0;
+        int start = 0, processPointer = 0;
         Map.Entry<Character, Node> entry = null;
+        //Find a node without an incoming edge - meaning it does not have a dependency
         while ((entry = getNodeWithoutIncomingEdge()) != null) {
             //There exists a node without any incoming edge
             build[start] = entry.getKey();
             start++;
 
-            //Find all nodes where incoming edge is 'node' and remove those;
-            removeIncomingConnection(entry.getValue());
+            while(processPointer < start) {
+                Node node = nodeMap.get(build[processPointer]);
+                nodeMap.remove(node.data);
+                //Since this 'node' project is built, remove the incoming edge from this node for all its children
+                for(Node child: node.outGoingEdges){
+                    child.incomingEdges.remove(node);
+                    //'Node' project was the only remaining dependency on this project so lets add it to build
+                    if(child.incomingEdges.isEmpty()) {
+                        build[start] = child.data;
+                        start++;
+                    }
+                }
+                processPointer++;
+            }
         }
 
         return build;
