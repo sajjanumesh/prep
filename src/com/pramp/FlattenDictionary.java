@@ -61,6 +61,7 @@ public class FlattenDictionary {
         map.put("Key2",key2);
         map.put("x", 100);
         Map<String, Integer> resultMap = flatten(map);
+        System.out.println(resultMap);
         for(Map.Entry<String, Integer> entry:resultMap.entrySet())
             System.out.println(entry.getKey()+":"+entry.getValue());
     }

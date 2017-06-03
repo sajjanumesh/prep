@@ -1,6 +1,7 @@
 package com.ctci.chapter4;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -71,6 +72,35 @@ public class BSTSequence {
         return resultList;
     }
 
+
+    private static List<List<Integer>> getAllCombinationsUsingLinkedList(LinkedList<Integer> list1, LinkedList<Integer> list2, LinkedList<Integer> prefix) {
+        List<List<Integer>> resultList = new ArrayList<>();
+        if(list1.isEmpty() || list2.isEmpty()) {
+            List<Integer> result = new ArrayList<>();
+            result.addAll(prefix);
+            result.addAll(list2.isEmpty()?list1:list2);
+
+            resultList.add(result);
+        } else {
+
+            int removedHead = list1.removeFirst();
+            prefix.addLast(removedHead);
+            List<List<Integer>> leftOneRemoved = getAllCombinations(list1, list2, prefix);
+            prefix.removeLast();
+            list1.addFirst(removedHead);
+
+
+            removedHead = list2.removeFirst();
+            prefix.addLast(removedHead);
+            List<List<Integer>> rightOneRemoved = getAllCombinations(list1, list2, prefix);
+            prefix.removeLast();
+            list2.addFirst(removedHead);
+            resultList.addAll(leftOneRemoved);
+            resultList.addAll(rightOneRemoved);
+        }
+
+        return resultList;
+    }
 
     public static void main(String[] args) {
         List<Integer> list1 = new ArrayList<>();
