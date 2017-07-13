@@ -44,7 +44,7 @@ public class RandomNodeGenerator {
         public TreeNode getRandomNode(){
             Random random = new Random();
             int n = random.nextInt(size);
-            int leftSize = left == null?0;left.size;
+            int leftSize = left == null?0:left.size;
             if(n<leftSize)
                 return left.getRandomNode();
             else if(n==leftSize)
