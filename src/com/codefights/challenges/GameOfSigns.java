@@ -52,8 +52,8 @@ public class GameOfSigns {
             }
         }
 
-//        System.out.println(row+" , "+col);
-//        System.out.println(Arrays.deepToString(c));
+        System.out.println(row+" , "+col);
+        System.out.println(Arrays.deepToString(c));
 
         while( row>=0 && row<m.length && col>=0 && col<m[0].length()){
             if(c[row][col] == 'F')
@@ -112,6 +112,30 @@ public class GameOfSigns {
         }
         return false;
     }
+
+    static boolean gameOfSignsOptimized(String[] m, String d) {
+        int x=0,y=0;
+        int h="URDL".indexOf(d);
+        for (int r=0;r<m.length;++r)
+            if (m[r].contains("S")) {
+                y=r;
+                x=m[r].indexOf("S");
+            }
+        while (x>=0 & x<m[0].length() & y>=0 & y<m.length)
+        {
+            switch (m[y].charAt(x))
+            {
+                case 'F': return true;
+                case 'R': h=(h+1)%4; break;
+                case 'L': h=(h+3)%4;
+            }
+            y+=(h-1)%2;
+            x-=(h-2)%2;
+        }
+        return false;
+
+    }
+
 
     public static void main(String[] args) {
         String[] m = {"S-R",
