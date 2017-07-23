@@ -21,7 +21,7 @@ public class BitInsertion {
         m = m <<index;
 
         //n OR m;
-        return (clearedN & mask) | m;
+        return clearedN | m;
     }
 
     static int findMostSignificantSetBit(int m) {
